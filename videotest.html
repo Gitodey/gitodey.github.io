@@ -1,0 +1,73 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewpoint" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image" href="{% static '/images/skologo.png' %}">
+    <link href="https://vjs.zencdn.net/8.16.1/video-js.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <title>{{name}}</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        /*
+        .vjs-control-bar .vjs-download-button {
+            display: none;
+        }*/
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <video id="my-video" class="video-js" controls preload="auto" width="800" height="400" poster="" data-setup="{}">
+            <source src="https://classroom.google.com/c/NzIxMTAyMjEwNjE5/m/NzYzMDM1ODk5NTg0/details" type="video/mp4" />
+            <-- <source src="https://youtu.be/23zuDjJspVo" type='video/mp4' /> -->
+        </video>
+    </div>
+
+    <script src="https://vjs.zencdn.net/8.16.1/video.min.js"></script>
+    <script>
+        /*
+        var player = videojs('my-video', {
+            plugins:{
+                disableDownload: true
+            }
+        });
+        */
+        
+        var player = videojs('my-video', {
+            controlBar:{
+                children: [
+                    'playToggle',
+                    'ProgressControl',
+                    'volumeControl',
+                    'fullscreenToggle'
+                ]
+            }
+        });
+        /*
+        var player = videojs('my-video', {
+            controls: false,
+            controlBar:{
+                children: [
+                    'playToggle',
+                    'ProgressControl',
+                    'volumeControl'
+                ]
+            }
+        });        
+        */
+    </script>
+
+</body>
+
+</html>
